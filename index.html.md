@@ -1,0 +1,346 @@
+<!DOCTYPE html>  
+<html lang="pt-BR">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Apostilas Médicas | ENARE & INEP Revalida</title>  
+    <style>  
+        :root {  
+            --primary: #1e3a8a;  
+            --primary-hover: #172554;  
+            --accent: #106981;  
+            --accent-hover: #059669;  
+            --text: #334155;  
+            --bg: #f8fafc;  
+        }  
+  
+        * {   
+            box-sizing: border-box;  
+            margin: 0;   
+            padding: 0;   
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+        }  
+  
+        body {   
+            background-color: var(--bg);   
+            color: var(--text);   
+            line-height: 1.6;  
+            padding-bottom: 60px;   
+        }  
+  
+        /* Hero Section */  
+        .hero {   
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);   
+            color: white;   
+            text-align: center;   
+            padding: 60px 20px;  
+        }  
+          
+        .hero h1 {   
+            font-size: 2.5rem;   
+            margin-bottom: 15px;   
+            font-weight: 800;   
+            letter-spacing: -0.5px;   
+        }  
+          
+        .hero p {   
+            font-size: 1.2rem;   
+            max-width: 700px;  
+            margin: 0 auto 30px auto;   
+            color: #93c5fd;   
+        }  
+          
+        .cta-btn {   
+            display: inline-block;   
+            background-color: var(--accent);   
+            color: white;   
+            padding: 14px 30px;   
+            font-size: 1.1rem;  
+            font-weight: bold;   
+            text-decoration: none;   
+            border-radius: 8px;   
+            transition: background 0.25s;   
+            box-shadow: 0 4px 6px 1px rgba(0,0,0,0.1);   
+        }  
+  
+        .cta-btn:hover {   
+            background-color: var(--accent-hover);  
+        }  
+  
+        /* Container */  
+        .container {   
+            max-width: 1000px;   
+            margin: 0 auto;   
+            padding: 40px 20px;   
+        }  
+  
+        .section-title-landing {   
+            text-align: center;   
+            font-size: 1.8rem;   
+            color: var(--primary);  
+            margin-bottom: 30px;   
+            font-weight: 700;   
+        }  
+  
+        /* Grandes Áreas Grid */  
+        .grid-areas {   
+            display: block;   
+            text-align: center;   
+            margin-bottom: 50px;   
+        }  
+  
+        .area-card {   
+            display: inline-block;   
+            width: 30%;   
+            background: white;  
+            margin: 1%;   
+            padding: 20px;  
+            border-radius: 8px;   
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);   
+            text-align: left;   
+            vertical-align: top;  
+            border-top: 4px solid var(--primary);  
+        }  
+  
+        .area-card h3 {   
+            color: var(--primary);   
+            margin-bottom: 8px;   
+            font-size: 1.1rem;   
+        }  
+          
+        .area-card p {   
+            font-size: 0.9rem;   
+            color: #64748b;  
+        }  
+  
+        /* Tabela de Ofertas / Cards de Preço */  
+        .pricing-section {   
+            text-align: center;   
+            margin-top: 40px;   
+        }  
+  
+        .pricing-container {   
+            display: block;   
+            text-align: center;  
+        }  
+  
+        .price-card {   
+            display: inline-block;   
+            width: 45%;   
+            background: white;   
+            margin: 2%;   
+            padding: 35px 25px;   
+            border-radius: 12px;  
+            box-shadow: 0 4px 6px 1px rgba(0,0,0,0.1);   
+            vertical-align: top;   
+            text-align: center;   
+            position: relative;   
+            border: 1px solid #e2e8f0;  
+        }  
+  
+        .price-card.featured {   
+            border: 2px solid var(--accent);   
+            background-color: #fff;   
+        }  
+          
+        .badge {   
+            position: absolute;   
+            top: 15px;   
+            left: 50%;   
+            transform: translateX(-50%);   
+            background: var(--accent);  
+            color: white;   
+            padding: 4px 15px;   
+            border-radius: 20px;   
+            font-size: 0.8rem;  
+            font-weight: bold;   
+            text-transform: uppercase;   
+        }  
+  
+        .price-card h3 {   
+            font-size: 1.4rem;   
+            color: var(--primary);  
+            margin-bottom: 10px;   
+        }  
+          
+        .price-card .subtitle {   
+            font-size: 0.9rem;   
+            color: #64748b;  
+            margin-bottom: 20px;  
+        }  
+          
+        .price-card .price {   
+            font-size: 2.2rem;  
+            font-weight: 800;   
+            color: #0f172a;  
+            margin-bottom: 20px;  
+        }  
+  
+        .price-card ul {   
+            list-style: none;   
+            text-align: left;   
+            margin-bottom: 30px;   
+            padding: 0 10px;  
+        }  
+          
+        .price-card ul li {   
+            margin-bottom: 10px;   
+            font-size: 0.95rem;   
+            color: #475569;   
+        }  
+  
+        .price-card ul li::before {   
+            content: "✓ ";   
+            color: var(--accent);  
+            font-weight: bold;   
+        }  
+  
+        .price-btn {   
+            display: block;   
+            background-color: var(--primary);   
+            color: white;   
+            padding: 12px;  
+            text-decoration: none;   
+            border-radius: 6px;   
+            font-weight: bold;  
+            transition: background 0.25s;   
+        }  
+          
+        .price-btn:hover {   
+            background-color: var(--primary-hover);   
+        }  
+  
+        .price-btn.accent {   
+            background-color: var(--accent);   
+        }  
+  
+        .price-btn.accent:hover {   
+            background-color: var(--accent-hover);  
+        }  
+  
+        /* Garantia */  
+        .garantia {   
+            background: #eff6ff;   
+            border-radius: 12px;   
+            padding: 30px;   
+            text-align: center;   
+            margin-top: 50px;   
+            border: 1px solid #bfdbfe;  
+        }  
+  
+        .garantia h4 {   
+            color: var(--primary);   
+            font-size: 1.2rem;   
+            margin-bottom: 10px;   
+        }  
+  
+        .garantia p {   
+            font-size: 0.95rem;   
+            max-width: 600px;   
+            margin: 0 auto;  
+            color: #1e3a8a;   
+        }  
+  
+        /* Responsive adjustments for active site */  
+        @media (max-width: 768px) {  
+            .area-card {   
+                width: 98%;   
+                margin: 1% 0;  
+            }  
+  
+            .price-card {   
+                width: 98%;   
+                margin: 15px 0;   
+            }  
+  
+            .hero h1 {   
+                font-size: 1.8rem;  
+            }  
+        }  
+    </style>  
+</head>  
+<body>  
+  
+    <section class="hero">  
+        <h1>O Método Definitivo para Gabaritar o ENARE e o INEP</h1>  
+        <p>Apostilas direto ao ponto, focadas no padrão de cobrança das bancas. Menos teoria maçante, mais assertividade nos seus estudos médicos.</p>  
+        <a href="#ofertas" class="cta-btn">Quero Ser Aprovado</a>  
+    </section>  
+  
+    <div class="container">  
+  
+        <h2 class="section-title-landing">O Que Você Vai Encontrar nas Apostilas</h2>  
+          
+        <div class="grid-areas">  
+            <div class="area-card">  
+                <h3>Clínica Médica</h3>  
+                <p>O s temas mais cobrados organizados de forma puramente estratégica e visual.</p>  
+            </div>  
+  
+            <div class="area-card">  
+                <h3>Cirurgia Geral</h3>  
+                <p>Condutas imediatas, trauma e tópicos quentes de prova sem enrolação.</p>  
+            </div>  
+  
+            <div class="area-card">  
+                <h3>Ginecologia</h3>  
+                <p>Raciocínio rápido para diagnósticos estruturados e terapêuticas mais cobradas.</p>  
+            </div>  
+  
+            <div class="area-card">  
+                <h3>Obstetrícia</h3>  
+                <p>Do ciclo gravídico-puerperal às grandes emergências obstétricas do edital.</p>  
+            </div>  
+  
+            <div class="area-card">  
+                <h3>Pediatria</h3>  
+                <p>Desenvolvimento, marcos, imunização e patologias frequentes direto ao ponto.</p>  
+            </div>  
+  
+            <div class="area-card">  
+                <h3>Medicina Preventiva</h3>  
+                <p>Legislação do SUS, epidemiologia e indicadores para gabaritar com certeza.</p>  
+            </div>  
+        </div>  
+  
+        <h2 id="ofertas" class="section-title-landing">Escolha o Melhor Plano para Você</h2>  
+  
+        <div class="pricing-container">  
+            <div class="price-card">  
+                <h3>Apostila Individual</h3>  
+                <div class="subtitle">Ideal para reforçar sua maior dificuldade</div>  
+                <div class="price">R$ 39,90</div>  
+                <ul>  
+                    <li>Escolha 1 das 6 Grandes Áreas</li>  
+                    <li>Foco total em Engenharia Reversa</li>  
+                    <li>Teoria resumida e Bizus de Prova</li>  
+                    <li>Download digital imediato em PDF</li>  
+                </ul>  
+                <a href="#" class="price-btn" target="_blank">Comprar Apostila Individual</a>  
+            </div>  
+  
+            <div class="price-card featured">  
+                <div class="badge">Mais Vendido</div>  
+                <h3>Combo 6 Grandes Áreas</h3>  
+                <div class="subtitle">A preparação completa e definitiva</div>  
+                <div class="price">R$ 99,00</div>  
+                <ul>  
+                    <li><strong>Todas as 6 apostilas completas</strong></li>  
+                    <li>Clínica, Cirurgia, GO, Preventiva e Pediatria</li>  
+                    <li>Análise detalhada do perfil ENARE e INEP</li>  
+                    <li>Acesso vitalício aos materiais digitais</li>  
+                    <li><strong>Economia de mais de R$ 140,00</strong></li>  
+                </ul>  
+                <a href="#" class="price-btn accent" target="_blank">Garantir Combo Completo</a>  
+            </div>  
+        </div>  
+  
+        <div class="garantia">  
+            <h4>Garantia de Satisfação Incondicional</h4>  
+            <p>Estude por 7 dias. Se você não gostar da didática ou achar que o material não vai acelerar sua aprovação, devolvemos 100% do seu dinheiro investido. Sem burocracia.</p>  
+        </div>  
+  
+    </div>  
+  
+</body>  
+</html>  
